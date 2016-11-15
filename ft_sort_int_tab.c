@@ -1,23 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stvalett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 03:00:56 by stvalett          #+#    #+#             */
-/*   Updated: 2016/11/14 09:46:33 by stvalett         ###   ########.fr       */
+/*   Created: 2016/11/14 19:45:54 by stvalett          #+#    #+#             */
+/*   Updated: 2016/11/14 20:42:34 by stvalett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *str)
+void	ft_sort_int_tab(int *tab, int n)
 {
-	size_t i;
+	int i;
+	int	j;
+	int	tmp;
 
-	if (!str)
+	if (n <= 0 || !tab)
 		return ;
-	i = ft_strlen(str);
-	ft_memset((char *)str, '\0', i);
+	i = 0;
+	tmp = 0;
+	j = 1;
+	while (j)
+	{
+		j = 0;
+		while (i < n)
+		{
+			if (tab[i] > tab[i + 1])
+			{
+				tmp = tab[i];
+				tab[i] = tab[i + 1];
+				tab[i + 1] = tmp;
+				j = 1;
+			}
+			i++;
+		}
+		i = 0;
+	}
 }

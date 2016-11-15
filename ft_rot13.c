@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_rot13.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stvalett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 03:00:56 by stvalett          #+#    #+#             */
-/*   Updated: 2016/11/14 09:46:33 by stvalett         ###   ########.fr       */
+/*   Created: 2016/11/14 18:17:36 by stvalett          #+#    #+#             */
+/*   Updated: 2016/11/14 19:12:17 by stvalett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *str)
+void	ft_rot13(char *str, int n)
 {
-	size_t i;
+	int i;
 
-	if (!str)
+	if (!str || (n < 1 || n > 25))
 		return ;
-	i = ft_strlen(str);
-	ft_memset((char *)str, '\0', i);
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = ((((str[i] - 'a') + n) % 26) + 'a');
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = ((((str[i] - 'A') + n) % 26) + 'A');
+		i++;
+	}
+	ft_putstr(str);
 }

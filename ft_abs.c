@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stvalett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 03:00:56 by stvalett          #+#    #+#             */
-/*   Updated: 2016/11/14 09:46:33 by stvalett         ###   ########.fr       */
+/*   Created: 2016/11/14 21:01:29 by stvalett          #+#    #+#             */
+/*   Updated: 2016/11/14 21:06:20 by stvalett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *str)
+int		ft_abs(int value)
 {
-	size_t i;
-
-	if (!str)
-		return ;
-	i = ft_strlen(str);
-	ft_memset((char *)str, '\0', i);
+	return (value < 0 ? (-value) : (value));
 }

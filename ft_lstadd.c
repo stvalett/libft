@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stvalett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 03:00:56 by stvalett          #+#    #+#             */
-/*   Updated: 2016/11/14 09:46:33 by stvalett         ###   ########.fr       */
+/*   Created: 2016/11/14 13:58:53 by stvalett          #+#    #+#             */
+/*   Updated: 2016/11/14 17:02:54 by stvalett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *str)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	size_t i;
-
-	if (!str)
+	if (!alst || !new)
 		return ;
-	i = ft_strlen(str);
-	ft_memset((char *)str, '\0', i);
+	else
+	{
+		new->next = *alst;
+		*alst = new;
+	}
 }

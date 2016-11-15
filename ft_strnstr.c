@@ -6,7 +6,7 @@
 /*   By: stvalett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 11:50:41 by stvalett          #+#    #+#             */
-/*   Updated: 2016/11/09 14:32:50 by stvalett         ###   ########.fr       */
+/*   Updated: 2016/11/14 09:52:33 by stvalett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t 		len2;
+	size_t		len2;
 	const char	*tmp1;
 	const char	*tmp2;
 
