@@ -1,2 +1,7 @@
 # libft
-First projet at school 42
+this project is of rewrite somes functions from lib C 
+
+# Start
+```
+$ make start
+```
