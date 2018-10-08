@@ -1,5 +1,5 @@
 # libft
-this project is of rewrite somes functions from lib C 
+this project is write a library like Lib C with our functions.
 
 # Start
 ```
